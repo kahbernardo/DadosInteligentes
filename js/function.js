@@ -13,6 +13,10 @@ export default função = () => {
 
   let validText = code.substr(72);
   let cities = validText.split("<b>->") - 1;
-  let roadMaps = validText.split("#Roteiro A").slice(1, 4);
-  let locals = roadmaps.map((x) => {});
+  let roadMaps = validText
+    .split("#Roteiro A")
+    .map((x) => x.split("#")[0])
+    .slice(1, 4);
+
+  let locals = roadMaps.map((x) => x.split("<br>")[1]);
 };
