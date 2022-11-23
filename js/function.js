@@ -12,11 +12,12 @@ export default função = () => {
 </html>`;
 
   let validText = code.substr(72);
-  let cities = validText.split("<b>->") - 1;
+  let citiesCount = validText.split("<b>->") - 1;
   let roadMaps = validText
     .split("#Roteiro A")
     .map((x) => x.split("#")[0])
     .slice(1, 4);
 
   let locals = roadMaps.map((x) => x.split("<br>")[1]);
+  let localsCount = locals.map((y) => y.split(";"));
 };
