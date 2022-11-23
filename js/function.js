@@ -13,6 +13,7 @@ export default função = () => {
 
   let validText = code.substr(72);
   let citiesCount = validText.split("<b>->") - 1;
+  let cities = validText.split("*");
   let roadMaps = validText
     .split("#Roteiro A")
     .map((x) => x.split("#")[0])
@@ -20,4 +21,6 @@ export default função = () => {
 
   let locals = roadMaps.map((x) => x.split("<br>")[1]);
   let localsCount = locals.map((y) => y.split(";"));
+  let SP = cities[2].split("->")[0];
+  let Center = cities[2].split("->")[0];
 };
